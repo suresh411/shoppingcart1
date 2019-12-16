@@ -1,1 +1,27 @@
-<p>cart works!</p>
+
+<div>
+<h1 class="bg-success text-center">CART</h1>
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Product Price</th>
+        <th>Total Price</th>
+        
+    </tr>
+</thead>
+
+
+    <tr *ngFor="let post of pro">
+      <td>{{post.name}}</td>
+      <td>{{post.quantity}}</td>
+      <td>{{post.price}}</td>
+      <td>{{quantity*price}}</td>
+    </tr>
+  </table>
+</div>
+
+
+
+

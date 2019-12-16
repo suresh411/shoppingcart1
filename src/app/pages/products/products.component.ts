@@ -15,7 +15,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   }
   getData(){
-    return this.service.getcat();
+   
+    return this.service.products;
+  }
+  addToCart(p){
+    
+    this.service.cart.push(p)
   }
 
 }
