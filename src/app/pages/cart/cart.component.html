@@ -13,14 +13,35 @@
 </thead>
 
 
-    <tr *ngFor="let post of pro">
-      <td>{{post.name}}</td>
-      <td>{{post.quantity}}</td>
-      <td>{{post.price}}</td>
-      <td>{{quantity*price}}</td>
+    <tr *ngFor="let post of cartkeys">
+      <td>{{cart[post].name}}</td>
+      <input type="number" min="1" max="8" [(ngModel)]="cart[post].quantity">
+      <td>{{cart[post].price}}</td>
+      <input type="number"id="suresh" [(ngModel)]="cart[post].quantity*cart[post].price" value=""  >
+
     </tr>
+
   </table>
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
