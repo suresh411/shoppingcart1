@@ -14,30 +14,27 @@ export class ProductsComponent implements OnInit {
  
 
   ngOnInit() {
+    
   }
   getData(){
    
     return this.service.products;
   }
-  // addToCart(p){
+  // addToCart(p){ cbvx1` 12
   //   this.service.cart.push(p)
   //   this.service.cart[p.id]["quantity"] = this.service.cart[p.id]["quantity"]+1;
   // }
 
   addToCart(p:any){
     if(this.service.cart.hasOwnProperty(p.id)){
-      this.service.cart[p.id]["quantity"] = this.service.cart[p.id]["quantity"]+1;
-      this.service.cart[p.id]["total"] = this.service.cart[p.id]["quantity"]*p.price;
-      
+      this.service.cart[p.id]["quantity"] += 1;
     }else{
-      this.service.cart[p.id] = {quantity:1,name:p.name,price:p.price,total:p.price,};
-      
-      this.service.cartkeys.push(p.id);
-
-     
-      
+          this.service.cart[p.id] = {quantity:1,name:p.name,discount:p.per,price:p.price,total:p.price,totalt:p.perc};
+          this.service.cartkeys.push(p.id);
+         }
     }
-  }
+
+  
 
 
   

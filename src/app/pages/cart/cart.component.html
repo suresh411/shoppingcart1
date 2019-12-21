@@ -7,21 +7,25 @@
         <th>Product Name</th>
         <th>Quantity</th>
         <th>Product Price</th>
+        <th>discount</th>
         <th>Total Price</th>
         
     </tr>
 </thead>
 
 
-    <tr *ngFor="let post of cartkeys">
+    <tr  *ngFor="let post of cartkeys">
       <td>{{cart[post].name}}</td>
-      <input type="number" min="1" max="8" [(ngModel)]="cart[post].quantity">
+      <input type="number" min="1" (input)="upDate()" max="8" [(ngModel)]="cart[post].quantity">
       <td>{{cart[post].price}}</td>
-      <input type="number"id="suresh" [(ngModel)]="cart[post].quantity*cart[post].price" value=""  >
+      <td>{{cart[post].discount}}</td>
+      <td>{{cart[post].quantity*cart[post].price*cart[post].totalt}}</td>
+   </tr>
+<tr>
+  <td>Total:{{p}}</td>
+</tr>
 
-    </tr>
-
-  </table>
+</table>
 
 
 </div>

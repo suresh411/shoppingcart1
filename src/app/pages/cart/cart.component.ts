@@ -11,44 +11,36 @@ export class CartComponent implements OnInit {
   
 // pro=[]
 cart={};
-
 cartkeys=[];
- 
-
-
-
-  constructor( private c:ServiceService) { }
+constructor( private c:ServiceService) { }
+  p:number=0;
   
+ ngOnInit() {
 
-  ngOnInit() {
     // this.pro=this.c.cart
+            
+            this.cart=this.c.cart;
+            this.cartkeys=this.c.cartkeys;
+            this.upDate();
+        };
+
+        // getdata(){
+        //    return this.c.cartkeys;
+        //   // this.cart=this.c.cart;
+        // };
     
-    this.cart=this.c.cart;
-    
-    this.cartkeys=this.c.cartkeys;
-    
-      
-    }
-    // console.log(this.cartkeys);
-    // console.log(this.cart)
-    
+
+    upDate(){
+            this.p=0
+            for(var val of this.cartkeys){
+              this.p+=(this.cart[val].quantity*this.cart[val].price*this.cart[val].totalt)
+              this.cart=this.c.cart;
+              this.cartkeys=this.c.cartkeys;
+
+
+              }
+            }
+
     
   }
-  
-
     
-  
-
-
- 
- 
-    
- 
-
-
-
-  
-  
-
-
-

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
            
-             <div class="col-3" *ngFor="let p of getData() | filter:pname" >
+             <div class="col-3" *ngFor="let p of getData()" >
                
                <div class="card"><span class="badge badge-danger  position-absolute">{{p.per}}</span>
                 <img src="{{p.image}}" class="card-img-top img-responsive img-fluid mx-auto"  alt="...">
@@ -12,7 +12,6 @@
                     <a routerLink="/"><h5 class="card-title text-secondary text-center">&#8377;{{p.price*p.perc}}<small><s>&#8377;{{p.price}}</s></small></h5></a>
                     <a routerLink="/"><h5 class="card-title text-secondary text-center"></h5></a>
                     
-
                     <p class="card-text text-primary" >Some quick example text to build on the card title and make.</p>
                   <a href="javascript:void()" class="btn btn-primary" (click)="addToCart(p)">Add to cart</a>
                 </div>
